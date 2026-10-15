@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="tr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafızlar İçin LGS Motivasyon & Takip Rehberi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .arabic-font { font-family: 'Amiri', serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .dark .glass-card { background: rgba(30, 41, 59, 0.95); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 dark:from-slate-900 dark:via-slate-800 dark:to-emerald-950 min-h-full text-slate-800 dark:text-slate-100 transition-colors duration-300">
+
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-emerald-100 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30">
+                    <i class="fa-solid fa-quran text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Hafız & LGS Rehberi</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Çift Kanatlı Başarı (Kur'an & Bilim)</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <button onclick="switchTab('dashboard')" id="nav-dashboard" class="px-3 py-2 rounded-lg text-sm font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/55 dark:text-emerald-300 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="hidden sm:inline">Ana Sayfa</span>
+                </button>
+                <button onclick="switchTab('tracker')" id="nav-tracker" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="hidden sm:inline">Takip & Hedef</span>
+                </button>
+                <button onclick="switchTab('timer')" id="nav-timer" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span class="hidden sm:inline">Odak Sayacı</span>
+                </button>
+                <button onclick="switchTab('game')" id="nav-game" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-brain"></i>
+                    <span class="hidden sm:inline">Matematik Arena</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- TAB 1: ANA SAYFA & MOTİVASYON -->
+        <div id="tab-dashboard" class="space-y-6">
+            <!-- Hoşgeldin ve Motivasyon Kartı -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <div class="lg:col-span-2 bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute -right-10 -bottom-10 text-white/10 text-9xl font-bold select-none">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
+                            <i class="fa-solid fa-star text-amber-300 mr-1"></i> Günün Motivasyon Sözü
+                        </div>
+                        <h2 id="daily-quote" class="text-xl sm:text-2xl font-bold leading-relaxed mb-4">
+                            "Hafızın kalbindeki nur, LGS sorularını çözerken zihnine berraklık katar. Sen çift kanatlı bir kuştun, uçmaya hazırlan!"
+                        </h2>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-between pt-4 border-t border-white/20 gap-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-quote-left text-emerald-300"></i>
+                            <span class="text-sm opacity-90">Hoca Tavsiyesi: Her gün 20 paragraf + 1 cüz tekrarı!</span>
+                        </div>
+                        <button onclick="changeQuote()" class="bg-white text-emerald-800 hover:bg-emerald-50 px-4 py-2 rounded-xl text-sm font-bold shadow transition transform active:scale-95">
+                            <i class="fa-solid fa-rotate mr-1"></i> Sözü Değiştir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- LGS Geri Sayım Kartı -->
+                <div class="glass-card rounded-2xl p-6 shadow-lg border border-emerald-100 dark:border-slate-700 flex flex-col justify-between text-center">
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-solid fa-hourglass-half"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-700 dark:text-slate-200">LGS Sınavına Kalan Süre</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Hedefine her saniye bir adım daha yakınsın</p>
+                    </div>
+                    <div class="my-4">
+                        <div class="grid grid-cols-4 gap-1 text-center">
+                            <div class="bg-emerald-50 dark:bg-slate-800 p-2 rounded-lg">
+                                <span id="countdown-days" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">--</span>
+                                <p class="text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">Gün</p>
+                            </div>
+                            <div class="bg-emerald-50 dark:bg-slate-800 p-2 rounded-lg">
+                                <span id="countdown-hours" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">--</span>
+                                <p class="text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">Saat</p>
+                            </div>
+                            <div class="bg-emerald-50 dark:bg-slate-800 p-2 rounded-lg">
+                                <span id="countdown-minutes" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">--</span>
+                                <p class="text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">Dakika</p>
+                            </div>
+                            <div class="bg-emerald-50 dark:bg-slate-800 p-2 rounded-lg">
+                                <span id="countdown-seconds" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">--</span>
+                                <p class="text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">Saniye</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-slate-800/60 p-3 rounded-xl text-xs text-emerald-700 dark:text-emerald-300 font-medium">
+                        "Sabredenler mükafatlarını hesapsız alırlar." (Zümer, 10)
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hızlı İstatistikler ve Rozetler -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-book-quran"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Ezber / Tekrar Durumu</p>
+                        <h4 id="stat-cuz" class="text-xl font-bold text-slate-800 dark:text-white">30 Cüz</h4>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Çözülen Soru</p>
+                        <h4 id="stat-questions" class="text-xl font-bold text-slate-800 dark:text-white">0 Soru</h4>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Çalışma Serisi</p>
+                        <h4 id="stat-streak" class="text-xl font-bold text-slate-800 dark:text-white">1 Gün</h4>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Kazanılan Rozet</p>
+                        <h4 id="stat-badges" class="text-xl font-bold text-slate-800 dark:text-white">0 / 5</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Öğretmen Tavsiyeleri & Günlük Program -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+                    <h3 class="font-bold text-lg mb-4 flex items-center text-emerald-700 dark:text-emerald-400">
+                        <i class="fa-solid fa-chalkboard-user mr-2"></i> Örnek Hafız-LGS Günlük Programı
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start bg-emerald-50/50 dark:bg-slate-800/40 p-3 rounded-xl">
+                            <span class="font-bold text-emerald-600 w-24 flex-shrink-0">05:00 - 07:00</span>
+                            <span class="text-slate-700 dark:text-slate-300">Sabah ezberi, taze zihinle hafızlık dersi ve sağlamlaştırma.</span>
+                        </li>
+                        <li class="flex items-start bg-slate-50 dark:bg-slate-800/40 p-3 rounded-xl">
+                            <span class="font-bold text-slate-600 w-24 flex-shrink-0">15:30 - 17:30</span>
+                            <span class="text-slate-700 dark:text-slate-300">Okul sonrası LGS Matematik ve Fen Bilimleri soru çözümü (En az 60 soru).</span>
+                        </li>
+                        <li class="flex items-start bg-emerald-50/50 dark:bg-slate-800/40 p-3 rounded-xl">
+                            <span class="font-bold text-emerald-600 w-24 flex-shrink-0">19:30 - 20:30</span>
+                            <span class="text-slate-700 dark:text-slate-300">Paragraf antrenmanı ve Türkçe/Sosyal deneme analizi.</span>
+                        </li>
+                        <li class="flex items-start bg-slate-50 dark:bg-slate-800/40 p-3 rounded-xl">
+                            <span class="font-bold text-slate-600 w-24 flex-shrink-0">21:00 - 21:30</span>
+                            <span class="text-slate-700 dark:text-slate-300">Yatmadan önce ertesi günün cüz tekrarı ve huzurlu uyku.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-4 flex items-center text-teal-700 dark:text-teal-400">
+                            <i class="fa-solid fa-lightbulb mr-2"></i> Öğretmeninden Notlar
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            "Evladım, Kur'an-ı Kerim'i ezberleyen bir zihin, karmaşık LGS matematik problemlerini çözerken en güçlü analitik güce sahiptir. Hafızlık sana güçlü bir hafıza, odaklanma ve disiplin kazandırdı. Bu avantajı LGS'de zafere dönüştürmek senin elinde!"
+                        </p>
+                    </div>
+                    <div class="bg-teal-50 dark:bg-teal-950/40 p-4 rounded-xl border border-teal-100 dark:border-teal-900/50 flex items-center justify-between">
+                        <span class="text-xs font-bold text-teal-800 dark:text-teal-300">Matematik Öğretmenin</span>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Daima Yanındayız 🎯</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: TAKİP & HEDEF PANELİ -->
+        <div id="tab-tracker" class="hidden space-y-6">
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 dark:border-slate-800">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800 dark:text-white">Günlük Hedef ve Takip Paneli</h2>
+                        <p class="text-sm text-slate-500">Bugünkü çalışmalarını kaydet ve serini koru!</p>
+                    </div>
+                    <button onclick="resetTracker()" class="text-xs text-rose-600 hover:text-rose-700 font-semibold border border-rose-200 px-3 py-1.5 rounded-lg transition">
+                        <i class="fa-solid fa-trash-can mr-1"></i> Verileri Sıfırla
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Cüz / Sayfa Takibi -->
+                    <div class="bg-emerald-50/60 dark:bg-slate-800/50 p-5 rounded-xl border border-emerald-100 dark:border-slate-700">
+                        <h4 class="font-bold text-emerald-800 dark:text-emerald-300 mb-3 flex items-center">
+                            <i class="fa-solid fa-book-open mr-2"></i> Hafızlık / Tekrar
+                        </h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-xs text-slate-600 dark:text-slate-400 block mb-1">Bugün Okunan Sayfa</label>
+                                <input type="number" id="input-pages" value="10" min="0" max="50" class="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-slate-500">
+                                <span>Hedef: 20 Sayfa</span>
+                                <span id="page-progress-text" class="font-bold text-emerald-600">50%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div id="page-progress-bar" class="bg-emerald-600 h-full w-1/2 transition-all duration-500"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LGS Soru Hedefi -->
+                    <div class="bg-blue-50/60 dark:bg-slate-800/50 p-5 rounded-xl border border-blue-100 dark:border-slate-700">
+                        <h4 class="font-bold text-blue-800 dark:text-blue-300 mb-3 flex items-center">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i> LGS Soru Hedefi
+                        </h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-xs text-slate-600 dark:text-slate-400 block mb-1">Çözülen Soru Sayısı</label>
+                                <input type="number" id="input-questions" value="60" min="0" max="300" class="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-slate-500">
+                                <span>Günlük Hedef: 100 Soru</span>
+                                <span id="question-progress-text" class="font-bold text-blue-600">60%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div id="question-progress-bar" class="bg-blue-600 h-full w-3/5 transition-all duration-500"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paragraf Hedefi -->
+                    <div class="bg-purple-50/60 dark:bg-slate-800/50 p-5 rounded-xl border border-purple-100 dark:border-slate-700">
+                        <h4 class="font-bold text-purple-800 dark:text-purple-300 mb-3 flex items-center">
+                            <i class="fa-solid fa-book-bookmark mr-2"></i> Paragraf Antrenmanı
+                        </h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-xs text-slate-600 dark:text-slate-400 block mb-1">Çözülen Paragraf Sorusu</label>
+                                <input type="number" id="input-paragraph" value="15" min="0" max="50" class="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-slate-500">
+                                <span>Hedef: 20 Soru</span>
+                                <span id="paragraph-progress-text" class="font-bold text-purple-600">75%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div id="paragraph-progress-bar" class="bg-purple-600 h-full w-3/4 transition-all duration-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                    <button onclick="saveTrackerData()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-xl text-sm shadow-lg shadow-emerald-600/30 transition transform active:scale-95">
+                        <i class="fa-solid fa-check mr-2"></i> Hedefleri Güncelle & Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Başarı Rozetleri Bölümü -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 dark:border-slate-800">
+                <h3 class="font-bold text-lg mb-2 text-slate-800 dark:text-white flex items-center">
+                    <i class="fa-solid fa-trophy text-amber-500 mr-2"></i> Rozet Koleksiyonun
+                </h3>
+                <p class="text-sm text-slate-500 mb-6">Hedeflerini tamamladıkça rozetleri aç!</p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="badges-container">
+                    <!-- JavaScript ile dinamik dolacak -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: POMODORO ODAK SAYAÇ -->
+        <div id="tab-timer" class="hidden space-y-6">
+            <div class="max-w-xl mx-auto glass-card rounded-2xl p-6 sm:p-10 shadow-xl border border-slate-100 dark:border-slate-800 text-center">
+                <div class="flex justify-center space-x-2 mb-8">
+                    <button onclick="setTimerMode('study')" id="btn-mode-study" class="px-4 py-2 rounded-xl text-sm font-bold bg-emerald-600 text-white shadow transition">
+                        Odak / Ders (25 dk)
+                    </button>
+                    <button onclick="setTimerMode('break')" id="btn-mode-break" class="px-4 py-2 rounded-xl text-sm font-bold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 transition">
+                        Kısa Molalar (5 dk)
+                    </button>
+                </div>
+
+                <div class="relative w-64 h-64 mx-auto flex items-center justify-center rounded-full bg-emerald-50 dark:bg-slate-800 border-8 border-emerald-500/20 shadow-inner mb-8">
+                    <div class="text-center">
+                        <span id="timer-display" class="text-5xl font-extrabold text-slate-800 dark:text-white tracking-wider">25:00</span>
+                        <p id="timer-status" class="text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-2 uppercase tracking-widest">Çalışma Vakti</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center space-x-4">
+                    <button onclick="toggleTimer()" id="btn-timer-toggle" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg shadow-emerald-600/30 transition flex items-center space-x-2">
+                        <i class="fa-solid fa-play" id="timer-icon"></i>
+                        <span id="timer-btn-text">Başlat</span>
+                    </button>
+                    <button onclick="resetTimer()" class="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-bold px-6 py-3 rounded-xl transition">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Sıfırla
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: MATEMATİK ARENA (LGS PRATİK OYUNU) -->
+        <div id="tab-game" class="hidden space-y-6">
+            <div class="max-w-2xl mx-auto glass-card rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-100 dark:border-slate-800">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800 dark:text-white flex items-center">
+                            <i class="fa-solid fa-brain text-purple-600 mr-2"></i> LGS Matematik Pratik Arenası
+                        </h2>
+                        <p class="text-xs text-slate-500">Zihnini açacak LGS tarzı pratik soruları çöz, puanları topla!</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-slate-500 block">Skor</span>
+                        <span id="game-score" class="text-2xl font-bold text-purple-600">0</span>
+                    </div>
+                </div>
+
+                <div id="game-start-screen" class="text-center py-8">
+                    <div class="w-20 h-20 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-inner">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2">Hafız Zihniyle Matematik Yarışması</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto mb-6">
+                        Üslü sayılar, köklü ifadeler, çarpanlar ve katlar konulu hızlı sorularla refleksini geliştir. Hazırsan başlayalım!
+                    </p>
+                    <button onclick="startGame()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg shadow-purple-600/30 transition">
+                        <i class="fa-solid fa-play mr-2"></i> Oyunu Başlat
+                    </button>
+                </div>
+
+                <div id="game-play-screen" class="hidden space-y-6">
+                    <div class="flex justify-between items-center text-xs text-slate-500">
+                        <span id="game-question-count">Soru 1 / 10</span>
+                        <span id="game-timer" class="font-bold text-rose-600"><i class="fa-solid fa-clock mr-1"></i> 20 sn</span>
+                    </div>
+
+                    <div class="bg-purple-50 dark:bg-slate-800/80 p-6 rounded-xl border border-purple-100 dark:border-slate-700 text-center">
+                        <h4 id="question-text" class="text-xl font-bold text-slate-800 dark:text-white">2^3 + 3^2 işleminin sonucu kaçtır?</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="options-container">
+                        <!-- Şıklar buraya gelecek -->
+                    </div>
+                </div>
+
+                <div id="game-over-screen" class="hidden text-center py-8 space-y-4">
+                    <div class="w-20 h-20 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Oyun Tamamlandı!</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Toplam Puanın:</p>
+                    <span id="final-score" class="text-4xl font-extrabold text-purple-600">80</span>
+                    <div class="pt-4">
+                        <button onclick="startGame()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded-xl shadow transition">
+                            <i class="fa-solid fa-rotate-right mr-2"></i> Yeniden Oyna
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Sekme Değiştirme Fonksiyonu
+        function switchTab(tabId) {
+            const tabs = ['dashboard', 'tracker', 'timer', 'game'];
+            tabs.forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                document.getElementById(`nav-${t}`).classList.remove('bg-emerald-100', 'text-emerald-800', 'dark:bg-emerald-900/55', 'dark:text-emerald-300');
+                document.getElementById(`nav-${t}`).classList.add('text-slate-600', 'dark:text-slate-300');
+            });
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            const activeNav = document.getElementById(`nav-${tabId}`);
+            activeNav.classList.remove('text-slate-600', 'dark:text-slate-300');
+            activeNav.classList.add('bg-emerald-100', 'text-emerald-800', 'dark:bg-emerald-900/55', 'dark:text-emerald-300');
+        }
+
+        // Motivasyon Sözleri Havuzu
+        const quotes = [
+            "\"Hafızın kalbindeki nur, LGS sorularını çözerken zihnine berraklık katar. Sen çift kanatlı bir kuştun, uçmaya hazırlan!\"",
+            "\"Kur'an ezberleyen hafızın iradesi demirdendir; LGS maratonunu en güzel dereceyle bitirecektir.\"",
+            "\"Her zorlukla beraber bir kolaylık vardır (İnşirah, 5). Ezberde sabrettiğin gibi sorularda da sabret!\"",
+            "\"Zihin açıklığı için gece çalışması ve sabah ezberinden daha bereketli vakit yoktur.\"",
+            "\"Sen kelam-ı ezberledin, ilmin kapıları sana sonuna kadar açık. Hedef fen lisesi veya imam hatip proje okulu!\""
+        ];
+
+        function changeQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('daily-quote').innerText = quotes[randomIndex];
+        }
+
+        // LGS Gerçek Zamanlı Geri Sayım Hesaplama (Tarih: Haziran Başı Tahmini LGS Sınavı)
+        function updateCountdown() {
+            const now = new Date();
+            let lgsYear = now.getFullYear();
+            
+            // Eğer bu yılki LGS tarihi (Haziran ilk haftası) geçtiyse, hedefi bir sonraki yıla ayarla
+            let lgsDate = new Date(lgsYear, 5, 6, 9, 30, 0); // Haziran ayı 0-indexed (5 = Haziran), Tahmini 6 Haziran 09:30
+            if (now > lgsDate) {
+                lgsDate = new Date(lgsYear + 1, 5, 6, 9, 30, 0);
+            }
+
+            const diff = lgsDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown-days').innerText = "00";
+                document.getElementById('countdown-hours').innerText = "00";
+                document.getElementById('countdown-minutes').innerText = "00";
+                document.getElementById('countdown-seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown-days').innerText = String(days).padStart(2, '0');
+            document.getElementById('countdown-hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('countdown-minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('countdown-seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        // Sayacı hemen çalıştır ve her saniye güncelle
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Rozet Sistemi
+        const badges = [
+            { id: 'b1', title: 'İlk Adım', desc: 'Sisteme giriş yaptın', icon: 'fa-shoe-prints', unlocked: true },
+            { id: 'b2', title: 'Hafız Kalem', desc: '100 soru çözdün', icon: 'fa-pen-nib', unlocked: false },
+            { id: 'b3', title: 'Paragraf Kurdu', desc: '20 paragraf tamamladın', icon: 'fa-book-open-reader', unlocked: false },
+            { id: 'b4', title: 'Odak Ustası', desc: 'Pomodoro tamamladın', icon: 'fa-clock', unlocked: false },
+            { id: 'b5', title: 'Matematik Şampiyonu', desc: 'Oyunda 50+ puan aldın', icon: 'fa-crown', unlocked: false }
+        ];
+
+        function renderBadges() {
+            const container = document.getElementById('badges-container');
+            container.innerHTML = '';
+            let unlockedCount = 0;
+            badges.forEach(b => {
+                if(b.unlocked) unlockedCount++;
+                container.innerHTML += `
+                    <div class="p-4 rounded-xl border ${b.unlocked ? 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300' : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-700 text-slate-400 opacity-60'} flex flex-col items-center text-center">
+                        <div class="w-12 h-12 rounded-full ${b.unlocked ? 'bg-emerald-200 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-200' : 'bg-slate-200 dark:bg-slate-700 text-slate-500'} flex items-center justify-center text-lg mb-2 shadow-sm">
+                            <i class="fa-solid ${b.icon}"></i>
+                        </div>
+                        <h5 class="font-bold text-xs mb-1">${b.title}</h5>
+                        <p class="text-[10px] opacity-80">${b.desc}</p>
+                    </div>
+                `;
+            });
+            document.getElementById('stat-badges').innerText = `${unlockedCount} / ${badges.length}`;
+        }
+        renderBadges();
+
+        // Tracker / Hedef Güncelleme
+        function saveTrackerData() {
+            const pages = parseInt(document.getElementById('input-pages').value) || 0;
+            const questions = parseInt(document.getElementById('input-questions').value) || 0;
+            const paragraph = parseInt(document.getElementById('input-paragraph').value) || 0;
+
+            // İlerleme yüzdeleri hesapla (Hedefler: 20 sayfa, 100 soru, 20 paragraf)
+            const pagePct = Math.min(Math.round((pages / 20) * 100), 100);
+            const qPct = Math.min(Math.round((questions / 100) * 100), 100);
+            const paraPct = Math.min(Math.round((paragraph / 20) * 100), 100);
+
+            document.getElementById('page-progress-text').innerText = pagePct + '%';
+            document.getElementById('page-progress-bar').style.width = pagePct + '%';
+
+            document.getElementById('question-progress-text').innerText = qPct + '%';
+            document.getElementById('question-progress-bar').style.width = qPct + '%';
+
+            document.getElementById('paragraph-progress-text').innerText = paraPct + '%';
+            document.getElementById('paragraph-progress-bar').style.width = paraPct + '%';
+
+            document.getElementById('stat-questions').innerText = questions + ' Soru';
+
+            // Rozet açma kontrolleri
+            if(questions >= 50) badges[1].unlocked = true;
+            if(paragraph >= 20) badges[2].unlocked = true;
+            renderBadges();
+
+            alert('Başarı verilerin başarıyla kaydedildi. Harika gidiyorsun hafız!');
+        }
+
+        function resetTracker() {
+            document.getElementById('input-pages').value = 0;
+            document.getElementById('input-questions').value = 0;
+            document.getElementById('input-paragraph').value = 0;
+            saveTrackerData();
+        }
+
+        // Pomodoro Timer Mantığı
+        let timerInterval = null;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+        let currentTimerMode = 'study';
+
+        function setTimerMode(mode) {
+            currentTimerMode = mode;
+            clearInterval(timerInterval);
+            isRunning = false;
+            document.getElementById('timer-icon').className = 'fa-solid fa-play';
+            document.getElementById('timer-btn-text').innerText = 'Başlat';
+
+            if(mode === 'study') {
+                timeLeft = 25 * 60;
+                document.getElementById('timer-status').innerText = 'Çalışma Vakti';
+                document.getElementById('btn-mode-study').className = 'px-4 py-2 rounded-xl text-sm font-bold bg-emerald-600 text-white shadow transition';
+                document.getElementById('btn-mode-break').className = 'px-4 py-2 rounded-xl text-sm font-bold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 transition';
+            } else {
+                timeLeft = 5 * 60;
+                document.getElementById('timer-status').innerText = 'Dinlenme Molası';
+                document.getElementById('btn-mode-break').className = 'px-4 py-2 rounded-xl text-sm font-bold bg-teal-600 text-white shadow transition';
+                document.getElementById('btn-mode-study').className = 'px-4 py-2 rounded-xl text-sm font-bold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 transition';
+            }
+            updateTimerDisplay();
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function toggleTimer() {
+            if(isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                document.getElementById('timer-icon').className = 'fa-solid fa-play';
+                document.getElementById('timer-btn-text').innerText = 'Devam Et';
+            } else {
+                isRunning = true;
+                document.getElementById('timer-icon').className = 'fa-solid fa-pause';
+                document.getElementById('timer-btn-text').innerText = 'Duraklat';
+                timerInterval = setInterval(() => {
+                    if(timeLeft > 0) {
+                        timeLeft--;
+                        updateTimerDisplay();
+                    } else {
+                        clearInterval(timerInterval);
+                        isRunning = false;
+                        alert('Süre doldu! Harika odaklandın.');
+                        if(currentTimerMode === 'study') {
+                            badges[3].unlocked = true;
+                            renderBadges();
+                        }
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            document.getElementById('timer-icon').className = 'fa-solid fa-play';
+            document.getElementById('timer-btn-text').innerText = 'Başlat';
+            timeLeft = currentTimerMode === 'study' ? 25 * 60 : 5 * 60;
+            updateTimerDisplay();
+        }
+
+        // Matematik Arena Oyun Mantığı
+        const mathQuestions = [
+            { q: "2³ + 3² işleminin sonucu kaçtır?", options: ["15", "17", "13", "12"], answer: 1 },
+            { q: "√144 + √81 işleminin sonucu kaçtır?", options: ["19", "21", "23", "17"], answer: 1 },
+            { q: "48 sayısının en büyük asal çarpanı kaçtır?", options: ["2", "3", "7", "5"], answer: 1 },
+            { q: "Kenar uzunlukları 8 cm ve 18 cm olan dikdörtgenin alanının karekökü kaç cm'dir?", options: ["10", "12", "14", "16"], answer: 1 },
+            { q: "2⁻³ sayısının eşiti aşağıdakilerden hangisidir?", options: ["-8", "1/8", "-1/8", "8"], answer: 1 }
+        ];
+
+        let currentGameQuestion = 0;
+        let score = 0;
+        let gameTimerInterval = null;
+        let questionTimeLeft = 20;
+
+        function startGame() {
+            currentGameQuestion = 0;
+            score = 0;
+            document.getElementById('game-start-screen').classList.add('hidden');
+            document.getElementById('game-over-screen').classList.add('hidden');
+            document.getElementById('game-play-screen').classList.remove('hidden');
+            document.getElementById('game-score').innerText = score;
+            loadGameQuestion();
+        }
+
+        function loadGameQuestion() {
+            if(currentGameQuestion >= mathQuestions.length) {
+                endGame();
+                return;
+            }
+            const qData = mathQuestions[currentGameQuestion];
+            document.getElementById('game-question-count').innerText = `Soru ${currentGameQuestion + 1} / ${mathQuestions.length}`;
+            document.getElementById('question-text').innerText = qData.q;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            qData.options.forEach((opt, index) => {
+                optionsContainer.innerHTML += `
+                    <button onclick="checkAnswer(${index})" class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl font-semibold text-sm hover:bg-purple-50 dark:hover:bg-purple-950/40 hover:border-purple-300 transition text-slate-700 dark:text-slate-200">
+                        ${opt}
+                    </button>
+                `;
+            });
+
+            questionTimeLeft = 20;
+            clearInterval(gameTimerInterval);
+            gameTimerInterval = setInterval(() => {
+                questionTimeLeft--;
+                document.getElementById('game-timer').innerHTML = `<i class="fa-solid fa-clock mr-1"></i> ${questionTimeLeft} sn`;
+                if(questionTimeLeft <= 0) {
+                    clearInterval(gameTimerInterval);
+                    currentGameQuestion++;
+                    loadGameQuestion();
+                }
+            }, 1000);
+        }
+
+        function checkAnswer(selectedIndex) {
+            clearInterval(gameTimerInterval);
+            const qData = mathQuestions[currentGameQuestion];
+            if(selectedIndex === qData.answer) {
+                score += 20;
+                document.getElementById('game-score').innerText = score;
+            }
+            currentGameQuestion++;
+            loadGameQuestion();
+        }
+
+        function endGame() {
+            document.getElementById('game-play-screen').classList.add('hidden');
+            document.getElementById('game-over-screen').classList.remove('hidden');
+            document.getElementById('final-score').innerText = score;
+            if(score >= 60) {
+                badges[4].unlocked = true;
+                renderBadges();
+            }
+        }
+    </script>
+</body>
+</html>
